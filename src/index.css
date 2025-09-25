@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e45614;
+  border-radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: extrabold;
+  src: url(./assets/font/THICCCBOI-ExtraBold.ttf);
+}
+@font-face {
+  font-family: bold;
+  src: url(./assets/font/THICCCBOI-Bold.ttf);
+}
+@font-face {
+  font-family: semibold;
+  src: url(./assets/font/THICCCBOI-SemiBold.ttf);
+}
+@font-face {
+  font-family: regular;
+  src: url(./assets/font/THICCCBOI-Regular.ttf);
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.extrabold {
+  font-family: extrabold;
+  font-weight: 7900;
+}
+.bold {
+  font-family: bold;
+  font-weight: 700;
+}
+.semibold {
+  font-family: semibold;
+  font-weight: 600;
+}
+.regular {
+  font-family: regular;
+  font-weight: 500;
+}
+.regulars {
+  font-family: regular;
+  font-weight: 400;
+}
+section {
+  height: 100vh;
+}
+
+section.bg-gray {
+  background: #111;
+}
+
+.our-work {
+  display: flex;
+  align-items: center;
+  background-color: #14192d;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.our-work:before {
+  width: 50vw;
+  height: 50vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  background: #e93f8e;
+  border-radius: 760px;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  opacity: 0.4;
+  filter: blur(270px);
+  content: "";
+  pointer-events: none;
+  will-change: transform;
+}
+
+.our-work h1 {
+  background-image: linear-gradient(269deg, #bc2789 1.26%, #f85956 98.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-flex;
+  font-size: 3.3rem;
+  line-height: 1.1;
+}
+
+.slider {
+  display: flex;
+  gap: 55px;
+  align-items: center;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .slider {
+    padding-top: 1rem;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .swiper {
+    height: 450px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel__nav {
+    flex-direction: row;
+  }
+}
+
+.contact {
+  background-image: url(./assets/contacebg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.relative {
+  position: relative !important;
+}
+.index {
+  z-index: 99999;
+}
+
+:root {
+  --swiper-navigation-color: #fff;
+  --swiper-navigation-size: 26px !important;
+}
+
+/* .teamswiper*/
+.swiper-horizontal .swiper-button-prev {
+  left: auto !important;
+  right: 3px;
+  rotate: 360deg !important;
+  top: 50% !important;
+  background-color: #000000;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}
+
+.swiper-button-prev {
+  left: 5px !important;
+  right: auto !important;
+
+  top: 50% !important;
+  background-color: #000000;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+}
+.swiper-button-next {
+  left: auto !important;
+  right: 5px;
+  top: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #000000;
+  border-radius: 100%;
+}
+.swiper-button-disabled {
+  opacity: 0.5; /* Make it look disabled */
+  pointer-events: none; /* Prevent clicks */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 3s linear infinite;
+}
+.serviceImg {
+  height: 420px !important;
+}
+
+@media (max-width: 640px) {
+  .slider {
+    padding-top: 1rem;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .swiper {
+    height: 460px;
+  }
+  .swiper-horizontal .swiper-button-prev {
+    left: auto !important;
+    right: 53px !important;
+    top: 3% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    rotate: 360deg !important;
+  }
+  .swiper-button-next {
+    left: auto !important;
+    right: 3px !important;
+    top: 3% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+  }
+  .teamswiper {
+    height: 580px !important;
+  }
+  .teamswiperchild {
+    height: 580px !important;
+  }
+  .teamswiper .swiper-horizontal .swiper-button-prev {
+    left: auto !important;
+    right: 0px;
+    rotate: 90deg;
+    top: 38% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+  }
+}
+@media (min-width: 641px) and (max-width: 820px) {
+  .swiper {
+    height: 680px;
+  }
+  .swiper-horizontal .swiper-button-prev {
+    left: auto !important;
+    right: 53px !important;
+    top: 3% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    rotate: 360deg !important;
+  }
+  .swiper-button-next {
+    left: auto !important;
+    right: 3px !important;
+    top: 3% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+  }
+  .teamswiper {
+    height: 375px;
+  }
+  .teamswiperchild {
+    height: 355px;
+  }
+  .teamswiper .swiper-horizontal .swiper-button-prev {
+    left: auto !important;
+    right: 0px;
+    rotate: 90deg;
+    top: 35% !important;
+    background-color: #000000;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+  }
+}
