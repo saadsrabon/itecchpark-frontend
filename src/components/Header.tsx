@@ -84,25 +84,13 @@ const Header: React.FC = () => {
               <h1
                 data-aos="fade-up"
                 className="text-black bold  lg:text-[64px]  lg:leading-[76.8px] md:text-[56px] text-[34px] leading-[35px] flex items-center  md:leading-[64px] md:text-left"
+                dangerouslySetInnerHTML={
+                  loading ? undefined : data?.title ? 
+                    { __html: data.title } : 
+                    { __html: "Result Driven <br /> Digital Agency" }
+                }
               >
-                {loading ? (
-                  <div className="animate-pulse">
-                    <div className="h-16 md:h-20 lg:h-20 bg-gray-300 rounded-lg mb-2 w-3/4"></div>
-                    <div className="h-16 md:h-20 lg:h-20 bg-gray-300 rounded-lg w-2/3"></div>
-                  </div>
-                ) : data?.title ? (
-                  data.title.split('\n').map((line: string, index: number) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      {index < data.title.split('\n').length - 1 && <br />}
-                    </React.Fragment>
-                  ))
-                ) : (
-                  <>
-                    Result Driven <br />
-                    Digital Agency
-                  </>
-                )}
+               
               </h1>
               <img
                 className="absolute left-[16%] lg:h-[280px] lg:w-[180px] w-[100px] h-[240px] top-40 md:top-32 -z-10"
@@ -149,11 +137,13 @@ const Header: React.FC = () => {
                 ) : (
                   <>
                     <Link
-                      to={"https://calendly.com/abchowdhury-m/30min"}
+                      to={data?.primaryButton?.link }
                       target="_blank"
                       className="py-3 px-6 w-[150px] md:w-[230px]  bg-black rounded-[40px] flex justify-center items-center opensans font-[600] md:text-[20px] md:leading-[27.24px] text-white shadow text-[12px] gap-2 z-20"
                     >
-                      Book a Call
+                      {
+                        data?.primaryButton?.text || "Book a Call"
+                      }
                       <img
                         className="md:w-[36px] md:h-[36px] w-6 h-6"
                         src={arrow}
@@ -163,10 +153,12 @@ const Header: React.FC = () => {
                       />
                     </Link>
                     <a
-                      href={"#works"}
+                      href={data?.secondaryButton?.link}
                       className="py-4 px-6 border rounded-[40px] md:w-[230px] w-[150px] flex justify-center border-[#000030] items-center opensans font-[400] text-[12px] text-[#000030] md:text-[20px] z-20"
                     >
-                      See Our Works
+                    {
+                      data?.secondaryButton?.text || "See Our Works"
+                    }
                     </a>
                   </>
                 )}
